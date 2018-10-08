@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Usuários</title>
+        <link rel='stylesheet' href='/public/stylesheets/style.css' />
+    </head>
+
+    <body>
+        <h1>Lista de usuários</h1>
+
+        <form action="/users/addNames" method="post">
+            <label for="name">Adicione seu nome: </label>
+            <input id="name" type="text" name="name" placeholder="Seu nome">
+            <input type="submit" value="Adicionar">
+        </form>
+
+        <form action="/users/rmNames" method="post">
+            <label for="name">Remova seu nome: </label>
+            <input id="name" type="text" name="name" placeholder="Seu nome">
+            <input type="submit" value="Remover">
+        </form>
+
+        <ul>
+            <% users.forEach(function(user) { %>
+                <li><%= user.name %></li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
